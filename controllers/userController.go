@@ -17,27 +17,15 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	// Memeriksa apakah username sudah diisi
-	if user.Username == "" {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Username must be provided"})
+	// Validasi data pengguna
+	if err := helpers.ValidateUser(user); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	// Memeriksa apakah email sudah diisi
-	if user.Email == "" {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Email must be provided"})
-		return
-	}
-
-	// Memeriksa apakah password sudah diisi
-	if user.Password == "" {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Password must be provided"})
-		return
-	}
-
-	// Memeriksa panjang password minimal
-	if len(user.Password) < 6 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Password must be at least 6 characters long"})
+	// Validasi alamat email
+	if !helpers.IsValidEmail(user.Email) {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid email address"})
 		return
 	}
 
@@ -118,6 +106,18 @@ func UpdateUser(c *gin.Context) {
 
 	// Bind data baru ke user
 	if err := c.ShouldBindJSON(&user); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	// Validasi perubahan email
+	if user.Email != "" && !helpers.IsValidEmail(user.Email) {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid email address"})
+		return
+	}
+
+	// Validasi data pengguna
+	if err := helpers.ValidateUser(user); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
