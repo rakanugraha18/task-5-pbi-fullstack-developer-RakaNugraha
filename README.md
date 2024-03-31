@@ -13,7 +13,7 @@ API yang telah dibuat pada Task ini adalah sebagai berikut:
 ![image](https://github.com/rakanugraha18/task_5_pbi_btpns_RakaNugraha/assets/144585473/b042d0e5-0109-4bb5-a72d-a842144d4b8d)
 - User dapat merubah foto dan menghapus foto
 ![image](https://github.com/rakanugraha18/task_5_pbi_btpns_RakaNugraha/assets/144585473/3cab1a92-3318-4e4c-9e83-09aedc99c801)
-- Hanya user yang telah login / sign up yang dapat melakukan delete / tambah foto profil User yang berbeda juga tidak dapat menghapus / mengubah foto yang telah di buat oleh user lain
+- Hanya user yang telah login / sign up yang dapat melakukan delete / tambah foto profil juga User yang berbeda tidak dapat menghapus / mengubah foto yang telah di buat oleh user lain
 ![image](https://github.com/rakanugraha18/task_5_pbi_btpns_RakaNugraha/assets/144585473/c6bda5a1-1cb7-46ce-a46d-2cd7319471c6)
 
 ## Tools & Libraries
