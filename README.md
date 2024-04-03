@@ -1,4 +1,4 @@
-# Final Task BTPNS - Raka Nugraha
+# Final Task Fullstack Developer - Raka Nugraha
 Task ini bertujuan sebagai penilaian akhir Project Based Internship pada BTPN Syariah dengan menggunakan bahasa pemrograman Golang.
 
 [![forthebadge made-with-go](http://ForTheBadge.com/images/badges/made-with-go.svg)](https://go.dev/)
